@@ -1,4 +1,4 @@
-export interface TokenResponse {
+export interface BasicResponse {
   ok: boolean;
   error?: string;
 }
