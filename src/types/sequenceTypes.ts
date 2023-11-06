@@ -1,11 +1,10 @@
 export interface Subsequence {
     subsequence: number[][];
+    createdAt?: Date;
 }
 
-export interface BodySequence {
+export interface Sequence {
     sequence: number[];
 }
 
-export interface BodySubsequence {
-    subsequence: number[][];
-}
+export interface SequenceInfo extends Subsequence, Subsequence {}
