@@ -5,6 +5,7 @@ import checkToken from './checkToken';
 import createSubsequence from './createSubsequence';
 import getSequence from './getSequence';
 import listSequences from './listSequences';
+import { PORT } from './config';
 
 const app = express();
 
@@ -22,8 +23,7 @@ app.get('/list-sequences', listSequences)
 app.get('/healthCheck', (_, res): void => {
   res.send('ok');
 });
-app.get('/', (_, res): void => {
-  res.send('Hello World');
-});
 
-app.listen(3000);
+app.listen(PORT, () => {
+  console.log(`:::..Sequence and combinatorics service running at port: ${PORT}..:::`)
+});
