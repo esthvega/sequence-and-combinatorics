@@ -2,6 +2,7 @@ import express from 'express';
 import getToken from './getToken';
 import checkToken from './checkToken';
 import createSubsequence from './createSubsequence';
+import getSequence from './getSequence';
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.get('/check-token', checkToken);
 
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
 app.post('/create-subsequence', createSubsequence)
+app.post('/get-sequence', getSequence)
 
 app.get('/healthCheck', (_, res): void => {
   res.send('ok');
