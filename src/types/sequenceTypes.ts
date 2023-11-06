@@ -1,3 +1,7 @@
-export interface SubSequence {
-    subSequence: number[][];
+export interface Subsequence {
+    subsequence: number[][];
+}
+
+export interface BodySequence {
+    sequence: number[];
 }

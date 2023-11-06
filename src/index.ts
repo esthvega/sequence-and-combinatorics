@@ -5,9 +5,13 @@ import createSubsequence from './createSubsequence';
 
 const app = express();
 
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
 app.get('/get-token', getToken);
 app.get('/check-token', checkToken);
 
+// eslint-disable-next-line @typescript-eslint/no-misused-promises
 app.post('/create-subsequence', createSubsequence)
 
 app.get('/healthCheck', (_, res): void => {

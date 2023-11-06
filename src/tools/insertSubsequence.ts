@@ -1,11 +1,11 @@
 import type { BasicResponse } from '../types/responseTypes';
 import getMongoDb from './db';
 
-export default async function insertSubSequence(subSequence: number[][]): Promise<BasicResponse> {
+export default async function insertSubsequence(subsequence: number[][]): Promise<BasicResponse> {
   try {
     const db = await getMongoDb();
     const sequenceCollection = db.collection('sequences');
-    const res = await sequenceCollection.insertOne({ subSequence, createdAt: new Date() });
+    const res = await sequenceCollection.insertOne({ subsequence, createdAt: new Date() });
     if (res.insertedId) {
       return {
         ok: true,
