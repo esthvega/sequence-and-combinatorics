@@ -5,3 +5,7 @@ export interface Subsequence {
 export interface BodySequence {
     sequence: number[];
 }
+
+export interface BodySubsequence {
+    subsequence: number[][];
+}

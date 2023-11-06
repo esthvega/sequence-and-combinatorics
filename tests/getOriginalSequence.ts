@@ -1,3 +1,5 @@
+import getOriginalSequence from "../src/utils/getOriginalSequence";
+
 test.each([
   {
     sequence: [1],
@@ -31,8 +33,7 @@ test.each([
       [1, 2, 3, 4],
     ],
   },
-])('get original sequence', ({ sequence }) => {
-  // TODO: Change when service is ready
-  const result = sequence;
+])('get original sequence', ({ sequence, subSequences }) => {
+  const result = getOriginalSequence(subSequences);
   expect(sequence.sort()).toEqual(result.sort());
 });
