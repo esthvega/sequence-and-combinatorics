@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import express from 'express';
 import getToken from './getToken';
 import checkToken from './checkToken';
 import createSubsequence from './createSubsequence';
 import getSequence from './getSequence';
+import listSequences from './listSequences';
 
 const app = express();
 
@@ -12,9 +14,10 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
 app.get('/get-token', getToken);
 app.get('/check-token', checkToken);
 
-// eslint-disable-next-line @typescript-eslint/no-misused-promises
+
 app.post('/create-subsequence', createSubsequence)
 app.post('/get-sequence', getSequence)
+app.get('/list-sequences', listSequences)
 
 app.get('/healthCheck', (_, res): void => {
   res.send('ok');
