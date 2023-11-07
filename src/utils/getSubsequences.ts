@@ -24,7 +24,7 @@ function getCombinations(sequence: number[], expectedLength: number): number[][]
   return combinations;
 }
 
-export default function getSubsequence(sequence: number[]) {
+export default function getSubsequences(sequence: number[]) {
   const result: number[][] = [];
   for (let i = 1, l = sequence.length; i <= l; i += 1) {
     const combinations = getCombinations(sequence, i);

@@ -1,11 +1,11 @@
 import jwt from 'jsonwebtoken';
 import type { Response, Request } from 'express';
-import { EXPIRATION_MILLISECONDS, SECRET_KEY } from './config';
+import { EXPIRATION_SECONDS, SECRET_KEY } from './config';
 
 export default function getToken(_: Request, res: Response): void {
   try {
     const token = jwt.sign(
-      { exp: Math.floor(Date.now() / 1000) + EXPIRATION_MILLISECONDS },
+      { exp: Math.floor(Date.now() / 1000) + EXPIRATION_SECONDS },
       SECRET_KEY,
     );
     res.status(200).json({ ok: true, token });
