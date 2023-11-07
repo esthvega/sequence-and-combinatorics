@@ -1,4 +1,4 @@
-import getSubsequence from "../src/utils/getSubsequence";
+import getSubsequences from "../src/utils/getSubsequences";
 
 test.each([
     {
@@ -34,7 +34,7 @@ test.each([
       ],
     },
   ])('get subsequences', ({ sequence, subSequences }) => {
-    const subsequencesRes = getSubsequence(sequence);
+    const subsequencesRes = getSubsequences(sequence);
     expect(subsequencesRes.sort()).toEqual(subSequences.sort());
   });
   

@@ -2,9 +2,9 @@ import type { Request, Response } from 'express';
 import type { Sequence } from './types/sequenceTypes';
 import verifyToken from './tools/verifyToken';
 import insertSubsequence from './tools/insertSubsequence';
-import getSubsequence from './utils/getSubsequence';
+import getSubsequence from './utils/getSubsequences';
 
-export default async function createSubsequence(req: Request, res: Response): Promise<void> {
+export default async function createSubsequences(req: Request, res: Response): Promise<void> {
   try {
     const validToken = verifyToken(req);
     if (!validToken.ok) {
