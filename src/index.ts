@@ -24,5 +24,5 @@ app.get('/health', (_, res): void => {
 });
 
 app.listen(PORT, () => {
-  console.log(`:::..Sequence and combinatorics service running at port--compose--: ${PORT}..:::`);
+  console.log(`:::..Sequence and combinatorics service running at port: ${PORT}..:::`);
 });
