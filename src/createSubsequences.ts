@@ -2,8 +2,13 @@ import type { Request, Response } from 'express';
 import { sequenceBodySchema } from './types/bodyTypes';
 import verifyToken from './tools/verifyToken';
 import insertSubsequence from './tools/insertSubsequence';
-import getSubsequence from './utils/getSubsequences';
+import getSubsequences from './utils/getSubsequences';
 
+/**
+ * Gets subsequences from a sequence
+ * @function createSubsequences
+ * @async
+ */
 export default async function createSubsequences(
   req: Request,
   res: Response,
@@ -26,7 +31,7 @@ export default async function createSubsequences(
       data: { sequence },
     } = bodySchema;
 
-    const subsequence = getSubsequence(sequence);
+    const subsequence = getSubsequences(sequence);
     if (subsequence.length) {
       const insertedRes = await insertSubsequence(subsequence);
       res.status(200).json({ ...insertedRes, subsequence });
