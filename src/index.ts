@@ -20,7 +20,7 @@ app.post('/get-sequence', getSequence);
 app.get('/list-sequences', listSequences);
 
 app.get('/health', (_, res): void => {
-  res.send('ok');
+  res.send({ ok: true });
 });
 
 app.listen(PORT, () => {

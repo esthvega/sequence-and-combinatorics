@@ -2,6 +2,10 @@ import jwt from 'jsonwebtoken';
 import type { Response, Request } from 'express';
 import { EXPIRATION_SECONDS, SECRET_KEY } from './config';
 
+/**
+ * Gets jwt token
+ * @function getToken
+ */
 export default function getToken(_: Request, res: Response): void {
   try {
     const token = jwt.sign(

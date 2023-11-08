@@ -2,6 +2,12 @@ import type { Request, Response } from 'express';
 import verifyToken from './tools/verifyToken';
 import getSequences from './utils/getSequences';
 
+
+/**
+ * Gets sequences and subsequences from data base
+ * @function listSequences
+ * @async
+ */
 export default async function listSequences(req: Request, res: Response): Promise<void> {
   try {
     const validToken = verifyToken(req);

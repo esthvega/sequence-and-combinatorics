@@ -3,6 +3,11 @@ import { subsequenceBodySchema } from './types/bodyTypes';
 import verifyToken from './tools/verifyToken';
 import getOriginalSequence from './utils/getOriginalSequence';
 
+
+/**
+ * Gets original sequence from a subsequences
+ * @function getSequence
+ */
 export default function getSequence(req: Request, res: Response): void {
   try {
     const validToken = verifyToken(req);
