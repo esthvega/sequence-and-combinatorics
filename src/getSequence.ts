@@ -1,5 +1,5 @@
 import type { Request, Response } from 'express';
-import type { Subsequence } from './types/sequenceTypes';
+import { subsequenceBodySchema } from './types/bodyTypes';
 import verifyToken from './tools/verifyToken';
 import getOriginalSequence from './utils/getOriginalSequence';
 
@@ -11,13 +11,17 @@ export default function getSequence(req: Request, res: Response): void {
       return;
     }
 
-    const body = req.body as Subsequence | undefined;
+    const bodySchema = subsequenceBodySchema.safeParse(req.body);
 
-    if (!body?.subsequence || !body.subsequence.length) {
-      res.status(501).json({ ok: false, error: 'Missing subsequence' });
+    if (!bodySchema.success) {
+      res.status(501).json({ ok: false, error: bodySchema.error });
       return;
     }
-    const { subsequence } = req.body as Subsequence;
+
+    const {
+      data: { subsequence },
+    } = bodySchema;
+
     const sequence = getOriginalSequence(subsequence);
     res.status(200).json({ ok: true, sequence });
   } catch (err) {
