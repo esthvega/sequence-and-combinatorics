@@ -19,7 +19,7 @@ app.post('/create-subsequences', createSubsequences);
 app.post('/get-sequence', getSequence);
 app.get('/list-sequences', listSequences);
 
-app.get('/healthCheck', (_, res): void => {
+app.get('/health', (_, res): void => {
   res.send('ok');
 });
 

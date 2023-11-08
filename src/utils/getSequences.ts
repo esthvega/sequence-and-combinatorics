@@ -3,7 +3,9 @@ import type { SequencesResponse, BasicResponse } from '../types/responseTypes';
 import getMongoDb from '../tools/db';
 import getOriginalSequence from './getOriginalSequence';
 
-export default async function getSequences(): Promise<SequencesResponse | BasicResponse> {
+export default async function getSequences(): Promise<
+  SequencesResponse | BasicResponse
+> {
   try {
     const db = await getMongoDb();
     const sequenceCollection = db.collection('sequences');
@@ -13,10 +15,12 @@ export default async function getSequences(): Promise<SequencesResponse | BasicR
 
     return {
       ok: true,
-      data: subsequences.map(({ subsequence }) => ({
-        sequence: getOriginalSequence(subsequence),
-        subsequence,
-      })),
+      data: subsequences
+        .map(({ subsequence }) => ({
+          sequence: getOriginalSequence(subsequence),
+          subsequence,
+        }))
+        .filter((seq) => !!seq.sequence),
     };
   } catch (err) {
     const { message, stack } = err as Error;
