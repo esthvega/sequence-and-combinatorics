@@ -74,6 +74,10 @@ typeof [ZodError](https://www.npmjs.com/package/zod#error-handling)
 | ------ | ----------- | --------- |
 | Post   | /get-sequence | true |
 
+| Type | Params    | Values   | Required |
+| ---- | --------- | -------- | -------- |
+| JSON | `subsequence`   | `Array of Array of numbers` | True     |
+
 **Response**
 
 - `ok` - **`boolean`** - Indica si el proceso fue bien
