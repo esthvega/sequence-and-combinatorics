@@ -2,20 +2,20 @@
 
 Servicio protegido con JWT token para obtener subsecuencias a partir de una secuencia.
 
-**Use**
+**USO**
 
 `docker-compose build`
 
 `docker-compose up`
 
-**Methods**
+**ENDPOINTS AND RESPONSES**
 
 | Method | URL         | Protected |
 | ------ | ----------- | --------- |
 | Get   | /health | false |
 
 
-**Response**
+**Response:**
 
 - `ok` - **`boolean`** - Indica si todo ha ido bien.
 
@@ -85,9 +85,3 @@ typeof [ZodError](https://www.npmjs.com/package/zod#error-handling)
 - `error` - **`string|ZodError`** - Error si algo falló
 
 typeof [ZodError](https://www.npmjs.com/package/zod#error-handling)
-
-
-| Type | Params    | Values   | Required |
-| ---- | --------- | -------- | -------- |
-| JSON | `subsequences`   | `Array of Array of numbers` | True     |
-
