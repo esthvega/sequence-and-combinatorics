@@ -65,7 +65,9 @@ Servicio protegido con JWT token para obtener subsecuencias a partir de una secu
 
 - `ok` - **`boolean`** - Indica si el proceso fue bien
 - `subsequence` - **`number[][]`** - Subsecuencia generada
-- `error` - **`string`** - Error si algo falló
+- `error` - **`string | ZodError`** - Error si algo falló
+
+typeof [ZodError](https://www.npmjs.com/package/zod#error-handling)
 
 
 | Method | URL         | Protected |
@@ -76,7 +78,9 @@ Servicio protegido con JWT token para obtener subsecuencias a partir de una secu
 
 - `ok` - **`boolean`** - Indica si el proceso fue bien
 - `sequence` - **`number[]`** - Secuencia original a partir de una subsecuencia
-- `error` - **`string`** - Error si algo falló
+- `error` - **`string|ZodError`** - Error si algo falló
+
+typeof [ZodError](https://www.npmjs.com/package/zod#error-handling)
 
 
 | Type | Params    | Values   | Required |
