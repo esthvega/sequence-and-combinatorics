@@ -35,5 +35,6 @@ test.each([
   },
 ])('get original sequence', ({ sequence, subSequences }) => {
   const result = getOriginalSequence(subSequences);
-  expect(sequence.sort()).toEqual(result.sort());
+  expect(result).toBeDefined();
+  expect(sequence.sort()).toEqual(result?.sort());
 });
