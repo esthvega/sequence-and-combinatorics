@@ -2,20 +2,20 @@
 
 Servicio protegido con JWT token para obtener subsecuencias a partir de una secuencia.
 
-## Use
+**Use**
 
 `docker-compose build`
 
 `docker-compose up`
 
-## Methods
+**Methods**
 
 | Method | URL         | Protected |
 | ------ | ----------- | --------- |
 | Get   | /health | false |
 
 
-#### Response
+**Response**
 
 - `ok` - **`boolean`** - Indica si todo ha ido bien.
 
@@ -24,7 +24,7 @@ Servicio protegido con JWT token para obtener subsecuencias a partir de una secu
 | ------ | ----------- | --------- |
 | Get   | /get-token | false |
 
-#### Response
+**Response**
 
 - `ok` - **`boolean`** - Indica si todo ha ido bien
 - `token` - **`string`** - JWT token
@@ -35,7 +35,7 @@ Servicio protegido con JWT token para obtener subsecuencias a partir de una secu
 | ------ | ----------- | --------- |
 | Get   | /check-token | true |
 
-#### Response
+**Response**
 
 - `ok` - **`boolean`** - Indica si el token es válido
 - `error` - **`string`** - Error si algo falló
@@ -45,7 +45,7 @@ Servicio protegido con JWT token para obtener subsecuencias a partir de una secu
 | ------ | ----------- | --------- |
 | Get   | /list-sequences | true |
 
-#### Response
+**Response**
 
 - `ok` - **`boolean`** - Indica si el proceso fue bien
 - `data` - **`{ sequence: number[]; subsequence: number[][]; }[]`** - Array con la información de las subsecuencias y la secuencia original
@@ -61,7 +61,7 @@ Servicio protegido con JWT token para obtener subsecuencias a partir de una secu
 | ---- | --------- | -------- | -------- |
 | JSON | `sequence`   | `Array of numbers` | True     |
 
-#### Response
+**Response**
 
 - `ok` - **`boolean`** - Indica si el proceso fue bien
 - `subsequence` - **`number[][]`** - Subsecuencia generada
@@ -74,7 +74,7 @@ typeof [ZodError](https://www.npmjs.com/package/zod#error-handling)
 | ------ | ----------- | --------- |
 | Post   | /get-sequence | true |
 
-#### Response
+**Response**
 
 - `ok` - **`boolean`** - Indica si el proceso fue bien
 - `sequence` - **`number[]`** - Secuencia original a partir de una subsecuencia
